@@ -1,0 +1,5 @@
+<?php
+$csv = $_FILES["fileToUpload"]["tmp_name"];
+
+
+?>

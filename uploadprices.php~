@@ -1,0 +1,11 @@
+<?php
+
+$csv1 = $_FILES["fileToUpload"]["name"];
+$csv2 = $_POST["name"];
+//$csv3 = array_map('str_getcsv', file('data.csv'));
+$csv3 = array_map('str_getcsv', $csv1);
+foreach ($csv3 as $value) {
+    echo $value;
+}
+echo $csv3;
+?>
