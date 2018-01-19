@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- 
+ID is not required, only name
+-->
+<form action="uploadprices.php" method="post" enctype="multipart/form-data">
+    Please, write down manufacturer ID<br>
+    <input type="text" name="manufacturer_id" id="manufacturer_id"><br>
+    Select pricelist for REGISTERED USERS to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload pricelist" name="submit">
+</form>
+
+</body>
+</html>

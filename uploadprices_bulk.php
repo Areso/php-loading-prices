@@ -75,9 +75,10 @@ if (!mysqli_set_charset($conn, "utf8")) {
   //  printf("Current character set: %s\n", mysqli_character_set_name($conn));
 }
 for ($i = 0; $i < $it; $i++) {
-	$query_line = "UPDATE oc_product 
- 	SET oc_product.price = ".$priceArr[$i].
- 	" WHERE (oc_product.manufacturer_id = ".$man_id.
+	$query_line = "UPDATE oc_product, oc_product_discount 
+ 	SET oc_product_discount.price = ".$priceArr[$i].
+ 	" WHERE (oc_product.product_id = oc_product_discount.product_id 
+      && oc_product.manufacturer_id = ".$man_id.
  	" && oc_product.model = ".$idArr[$i].
  	")";
 	//echo "<br>";
@@ -92,6 +93,6 @@ for ($i = 0; $i < $it; $i++) {
 
 echo "<html><body>";
 $query = mysqli_query($conn, $query_line);
-echo "<a href=\"uploadprices.html\">back to input</a>";
+echo "<a href=\"uploadprices_bulk.html\">back to input</a>";
 echo "</body></html>";
 ?>
