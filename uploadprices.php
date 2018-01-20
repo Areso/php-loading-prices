@@ -27,8 +27,8 @@ $idArr    = Array();
 $priceArr = Array();
 foreach ($csvFile2 as $entry) {
     $acctArr       = str_getcsv($entry, ";");
-	$idArr[$it]    = $acctArr[0];
-	$priceArr[$it] = $acctArr[1];
+	$idArr[$it]    = trim($acctArr[0], " ");
+	$priceArr[$it] = trim($acctArr[1], " ");
 	//echo $acctArr[1]." "; 
 	$it = $it+1;
 };
