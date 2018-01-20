@@ -51,8 +51,8 @@ if ($scenary == "PRODUCT") {
 		$query_line = "UPDATE oc_product 
 		SET oc_product.price = ".$priceArr[$i].
 		" WHERE (oc_product.manufacturer_id = ".$man_id.
-		" && oc_product.model = ".$idArr[$i].
-		")";
+		" && oc_product.model = '".$idArr[$i].
+		"')";
 		echo $query_line;
 		$result = mysqli_query($conn, $query_line);
 		echo " Query result is ".$result;
@@ -65,8 +65,8 @@ if ($scenary == "DISCOUNT") {
 		SET oc_product_discount.price = ".$priceArr[$i].
 		" WHERE (oc_product.product_id = oc_product_discount.product_id 
 		  && oc_product.manufacturer_id = ".$man_id.
-		" && oc_product.model = ".$idArr[$i].
-		")";
+		" && oc_product.model = '".$idArr[$i].
+		"')";
 		echo $query_line;
 		$result = mysqli_query($conn, $query_line);
 		echo " Query result is ".$result;
@@ -81,7 +81,7 @@ if ($scenary == "SPECIAL") {
 		$query_line = "INSERT INTO oc_product_special 
 		(product_id, customer_group_id, priority, price, date_start, date_end) 
 		VALUES 
-		((SELECT oc_product.product_id FROM oc_product WHERE oc_product.model = ".$idArr[$i]." && oc_product.manufacturer_id = ".$man_id."), 
+		((SELECT oc_product.product_id FROM oc_product WHERE oc_product.model = '".$idArr[$i]."' && oc_product.manufacturer_id = ".$man_id."), 
 		'2', '0', ".$priceArr[$i].", '".$date_start."', '".$date_end."')";
 		echo $query_line;
 		$result = mysqli_query($conn, $query_line);
