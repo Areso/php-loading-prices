@@ -9,6 +9,14 @@ ID is not required, only name
     <input type="text" name="manufacturer_id" id="manufacturer_id"><br>
     Select pricelist to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
+    <br>
+    <input type="radio" name="radio" value="PRODUCT">MSRP
+	<input type="radio" name="radio" value="DISCOUNT">BULK and DEALER PRICES
+	<input type="radio" name="radio" value="SPECIAL">SALE PRICES
+	<br>
+	ONLY FOR SALE PRICES, SALE DATE START and SALE DATE END, format YYYY-MM-DD<br>
+	<input type="text" name="date_start"><br>
+	<input type="text" name="date_end"><br>
     <input type="submit" value="Upload pricelist" name="submit">
 </form>
 
